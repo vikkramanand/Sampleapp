@@ -1,5 +1,10 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+
+{{#if session.isAuthenticated}}
+Authorization Code: {{session.data.authenticated.authorizationCode}} <br />
+
+    <button onclick={{action "logout"}}>Log Out</button>
+{{/if}}
+
+<hr />
 
 {{outlet}}
